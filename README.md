@@ -4,8 +4,16 @@ Connect files in python. The easiest event system.
 
 
 
-## Example
+## Network standards
 
+Example send string:
+
+````
+hello_there.py;hello_world
+````
+
+- Sender name(normal the filename)
+- Event name
 
 
 
