@@ -10,6 +10,14 @@ For the settings you have the following options:
 |port|The port where the connection happens.|19321|
 |connect_type|The connection type. Currently there is TCP/UDP.|TCP|
 
+See the example:
+````python
+mc_signal = MCSignal({
+    "host": "your_ip",
+    "port": "another_port",
+    "connect_type": "TCP",   
+})
+````
 
 ## Events
 You can define events, there are called when another file or your file call this event
