@@ -7,4 +7,5 @@ setup(
     description='My first Python library',
     author='Kalle Bracht',
     license='MIT',
+    url='https://github.com/Kalbra/mc-signal'
 )
