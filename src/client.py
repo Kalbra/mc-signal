@@ -17,5 +17,16 @@ class Client:
             s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             s.sendto(bytes(data, "ascii"), (self.host, self.port))
 
+        elif self.connect_type == "TCP":
+
+            # Encodes the data
+            data = f"{sender};{event}"
+
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                s.connect((self.host, self.port))
+                s.sendall(bytes(data, "ascii"))
+
+
+
 
 
