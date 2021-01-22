@@ -42,6 +42,19 @@ class Server:
 
                     self.__data_decoder__(data.decode())
 
+        elif self.connect_type == "TCP":
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                s.bind((self.host, self.port))
+                s.listen()
+                conn, addr = s.accept()
+                with conn:
+                    while True:
+                        data = conn.recv(1024)
+
+                        # Avoid connection error if void package is sent
+                        if data != b'':
+                            self.__data_decoder__(data.decode())
+
         else:
             raise ValueError(f"Connection type '{self.connect_type}' does not exist")
 
